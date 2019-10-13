@@ -10,14 +10,20 @@
     <title>ASK Oleg or not!</title>
 
     <style>
-    .btn-group button {
-      background-color: white; /* Green background */
-      border: 1px solid darkviolet; /* Green border */
-      color: black; /* White text */
-      padding: 5px 10px; /* Some padding */
-      cursor: pointer; /* Pointer/hand icon */
-      /*float: left; /* Float the buttons side by side */
-    }
+        .btn-group input {
+            padding: 10px 10px; /* Some padding */
+            height: 50px;
+            width: 60px;
+          /*float: left; /* Float the buttons side by side */
+        }
+
+        .btn-group button {
+          background-color: white; /* Green background */
+          border: 1px solid darkviolet; /* Green border */
+          color: black; /* White text */
+          cursor: pointer; /* Pointer/hand icon */
+          /*float: left; /* Float the buttons side by side */
+        }
 
     /* Clear floats (clearfix hack) */
     .btn-group button:after {
@@ -25,7 +31,11 @@
       clear: both;
       display: table;
     }
-
+ .btn-group:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
 
 
     /* Add a background color on hover */
@@ -89,19 +99,21 @@
          <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
 
           <div class="btn-group">
-          <input type="number" id="myNumber" style=" width:40px">
+              <div><input type="number" id="myNumber"></div>
           <div class="btn-group-vertical">
-            <button onclick="myFunction1()">Like</button>
-            <button onclick="myFunction2()">Dislike</button>
-          </div>
-          <script>
-          function myFunction1() {
-            document.getElementById("myNumber").stepUp(1);
+            <button style="height: 25px; width: 60px" onclick="myFunction1()">Like</button>
+            <button style="height: 25px; width: 60px" onclick="myFunction2()">Dislike</button>
+              <script>
+                function myFunction1() {
+                document.getElementById("myNumber").stepUp(1);
           }
           function myFunction2() {
             document.getElementById("myNumber").stepDown(1);
           }
         </script>
+          </div>
+
+
 
         </div>
         </div>
