@@ -10,6 +10,32 @@
     <title>ASK Oleg or not!</title>
 
     <style>
+    .btn-group button {
+      background-color: white; /* Green background */
+      border: 1px solid darkviolet; /* Green border */
+      color: black; /* White text */
+      padding: 5px 10px; /* Some padding */
+      cursor: pointer; /* Pointer/hand icon */
+      /*float: left; /* Float the buttons side by side */
+    }
+
+    /* Clear floats (clearfix hack) */
+    .btn-group button:after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+
+
+    /* Add a background color on hover */
+    .btn-group button:hover {
+      background-color: darkviolet;
+    }
+</style>
+
+
+    <style>
       main div{
         margin-top: 50px;
       }
@@ -46,12 +72,11 @@
   </div>
 </nav>
 
-
   <main role="main" class="container-fluid m-5">
 
   <div class="row">
-    <div class="col-md-8 col-sm-8 blog-main">
-      <h3 class="pb-4 mb-4 font-italic border-bottom">
+    <div class="col-md-8 col-sm-8 blog-main" style="background-color: #8fd19e">
+      <h3 class="mb-4 font-italic border-bottom">
         New Questions
       <a style="color: #c82333" href="#">Hot Questions</a>
       </h3>
@@ -60,10 +85,26 @@
     <div class="container-fluid" style="margin-top: 1px">
 
       <div class="row">
-        <div class="col col-1" style="background-color: deepskyblue">
-         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a>
-        </div>
+        <div class="col col-2" style="background-color: deepskyblue">
+         <a class="blog-post" href="#"><img src="/static/img/fffzRA7cwYA.jpg" width="60" height="60" style="margin: 10px"></a><br>
 
+          <div class="btn-group">
+          <input type="number" id="myNumber" style=" width:40px">
+          <div class="btn-group-vertical">
+            <button onclick="myFunction1()">Like</button>
+            <button onclick="myFunction2()">Dislike</button>
+          </div>
+          <script>
+          function myFunction1() {
+            document.getElementById("myNumber").stepUp(1);
+          }
+          function myFunction2() {
+            document.getElementById("myNumber").stepDown(1);
+          }
+        </script>
+
+        </div>
+        </div>
         <div class="col col-7" style="background-color: palegreen">
         <div class="blog-post">
         <h2><a style="color: darkviolet" href="#">What is the color of the stars?</a></h2>
@@ -79,10 +120,10 @@
         <blockquote>
           <p>Curabitur blandit tempus porttitor. <strong>Nullam quis risus eget urna mollis</strong> ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
         </blockquote>
-        <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+          <hr>
       </div><!-- /.blog-post -->
 </div>
-        <aside class="col-4 blog-sidebar">
+        <aside class="col-3 blog-sidebar">
 
       <div class="p-4 mb-8 bg-light rounded">
         <h4 class="font-italic">Popular tags</h4>
@@ -109,6 +150,9 @@
     </aside><!-- /.blog-sidebar -->
         </div>
  </div>
+
+
+
 
  <div class="container-fluid" style="margin-top: 1px">
 
@@ -140,12 +184,13 @@
 
 
 
-     <nav class="blog-pagination">
+     <nav class="blog-pagination" style="margin-top: 10px">
         <a class="btn btn-outline-primary" href="#">Older</a>
         <a class="btn btn-outline-secondary disabled" href="#" tabindex="-1" aria-disabled="true">Newer</a>
       </nav>
-
+  </div>
 </main><!-- /.container -->
+
 
 
 
